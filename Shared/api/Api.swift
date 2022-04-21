@@ -8,6 +8,6 @@ class Api {
     static let BASE_URL = "http://localhost:8080"
 
     static func login(identityToken: String) -> DataRequest {
-        Alamofire.request("/login", method: .post)
+        Alamofire.request("\(BASE_URL)/login", method: .post)
     }
 }

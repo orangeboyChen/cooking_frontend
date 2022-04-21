@@ -12,6 +12,7 @@
 		64B7F176281111820087F083 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7F171281111820087F083 /* ContentView.swift */; };
 		64B7F177281111820087F083 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7F173281111820087F083 /* Api.swift */; };
 		64B7F178281111820087F083 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7F175281111820087F083 /* AuthService.swift */; };
+		E1E573C12602201BE89EC4D8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E572B38C696CEB115CBDFD /* LoginView.swift */; };
 		F3FF402003E8D045970D2E6D /* Pods_cookinglearning__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F763A11E2136B250706240DE /* Pods_cookinglearning__iOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		64B7F175281111820087F083 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		64B7F179281111A70087F083 /* cookinglearning (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cookinglearning (iOS).entitlements"; sourceTree = "<group>"; };
 		9A3C7DFC56D3D168BC313D01 /* Pods-cookinglearning (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cookinglearning (iOS).release.xcconfig"; path = "Target Support Files/Pods-cookinglearning (iOS)/Pods-cookinglearning (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		E1E572B38C696CEB115CBDFD /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F763A11E2136B250706240DE /* Pods_cookinglearning__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cookinglearning__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				64B7F171281111820087F083 /* ContentView.swift */,
+				E1E571F7D7BABA6BD4770574 /* Login */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -101,6 +104,14 @@
 				F763A11E2136B250706240DE /* Pods_cookinglearning__iOS_.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1E571F7D7BABA6BD4770574 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E1E572B38C696CEB115CBDFD /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		EB541CAF38502CE822A1FBB7 /* Pods */ = {
@@ -229,6 +240,7 @@
 				64B7F176281111820087F083 /* ContentView.swift in Sources */,
 				64B7F156281110AD0087F083 /* cookinglearningApp.swift in Sources */,
 				64B7F178281111820087F083 /* AuthService.swift in Sources */,
+				E1E573C12602201BE89EC4D8 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
