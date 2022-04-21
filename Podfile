@@ -8,11 +8,3 @@ target 'cooking (iOS)' do
   # Pods for cooking (iOS)
 
 end
-
-target 'cooking (macOS)' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for cooking (macOS)
-
-end
