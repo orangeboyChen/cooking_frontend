@@ -7,11 +7,20 @@
 
 import SwiftUI
 struct ContentView: View {
-
+    
     let authService = AuthService.instance
-
+    
     var body: some View {
-        LoginView()
+        ZStack {
+            LoginView()
+            Button("qwe"){
+                Api.getListType().responseString { response in
+                    print(response.value ?? "???")
+                }
+                
+            }
+            .offset(y:-100)
+        }
     }
 }
 
@@ -20,3 +29,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

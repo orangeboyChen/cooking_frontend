@@ -5,6 +5,8 @@
 import Foundation
 import SwiftUI
 import AuthenticationServices
+import SwiftyJSON
+
 struct LoginView: View {
     
     let authController = AuthController()
@@ -22,8 +24,13 @@ struct LoginView: View {
                 SignUpWithAppleButton()
                         .onTapGesture {
                             authController.signInWithApple { identityToken in
-                                Api.login(identityToken: identityToken).responseString { response in
+                                Api.login(identityToken: identityToken).responseJSON { response in
                                     print(response.value ?? "???")
+                                    let responseValue:JSON=JSON(response.value)
+                                    let responseData=responseValue["data"]
+                                    let responseToken=responseData["token"].stringValue
+                                    print(responseToken)
+                                    UserDefaults.standard.set(responseToken, forKey: "token")
                                 }
                             }
                         }
@@ -67,7 +74,12 @@ extension AuthController: ASAuthorizationControllerDelegate {
         guard let auth = authorization.credential as? ASAuthorizationAppleIDCredential else {
             return
         }
+        
+        let fullNameData = auth.fullName
+        
+        let fullName=((fullNameData?.familyName ?? "") + (fullNameData?.givenName ?? ""))
 
+        
         guard let identityTokenData = auth.identityToken, let identityToken = String(data: identityTokenData, encoding: .utf8) else {
             return
         }
@@ -76,7 +88,7 @@ extension AuthController: ASAuthorizationControllerDelegate {
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        
+        //error
     }
 }
 
