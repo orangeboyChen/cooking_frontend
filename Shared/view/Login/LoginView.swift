@@ -6,6 +6,9 @@ import Foundation
 import SwiftUI
 import AuthenticationServices
 struct LoginView: View {
+    
+    let authController = AuthController()
+    
     var body: some View {
         ZStack {
             VStack {
@@ -16,18 +19,14 @@ struct LoginView: View {
             }
             VStack {
                 Spacer()
-                SignInWithAppleButton(
-                        onRequest: { _ in},
-                        onCompletion: { result in
-                            let auth = try? result.get()
-                            guard let auth = auth else {
-                                return
+                SignUpWithAppleButton()
+                        .onTapGesture {
+                            authController.signInWithApple { identityToken in
+                                Api.login(identityToken: identityToken).responseString { response in
+                                    print(response.value ?? "???")
+                                }
                             }
-
-                            //Todo 请求的业务逻辑
-
                         }
-                )
                         .cornerRadius(10.0)
                         .frame(height: 50)
                         .padding(.horizontal)
@@ -38,3 +37,46 @@ struct LoginView: View {
         }
     }
 }
+
+struct SignUpWithAppleButton: UIViewRepresentable {
+
+    func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
+        ASAuthorizationAppleIDButton(type: .signIn, style: .black)
+    }
+
+    func updateUIView(_ uiView: ASAuthorizationAppleIDButton, context: Context) {}
+}
+
+class AuthController: NSObject {
+
+    var onReceiveToken: ((String) -> Void)? = nil
+
+    func signInWithApple(_ onReceiveToken: @escaping (String) -> Void) {
+        self.onReceiveToken = onReceiveToken
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.performRequests()
+    }
+}
+
+extension AuthController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        guard let auth = authorization.credential as? ASAuthorizationAppleIDCredential else {
+            return
+        }
+
+        guard let identityTokenData = auth.identityToken, let identityToken = String(data: identityTokenData, encoding: .utf8) else {
+            return
+        }
+
+        onReceiveToken!(identityToken)
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        
+    }
+}
+

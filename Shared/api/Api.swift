@@ -4,10 +4,11 @@
 
 import Foundation
 import Alamofire
+import SwiftUI
 class Api {
     static let BASE_URL = "http://localhost:8080"
 
     static func login(identityToken: String) -> DataRequest {
-        Alamofire.request("\(BASE_URL)/login", method: .post)
+        AF.request("\(BASE_URL)/login", method: .post, parameters: ["identityToken": identityToken], encoder: JSONParameterEncoder.default)
     }
 }
