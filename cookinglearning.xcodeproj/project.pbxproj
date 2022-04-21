@@ -7,104 +7,149 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6450414C280FF77700CD075F /* cookingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64504124280FF77600CD075F /* cookingApp.swift */; };
-		6450414E280FF77700CD075F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64504125280FF77600CD075F /* ContentView.swift */; };
-		64504150280FF77700CD075F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64504126280FF77700CD075F /* Assets.xcassets */; };
-		7FC9E5B8A0C4CE88BC86206E /* Pods_cooking__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D179D6F0484C8214254A0B8 /* Pods_cooking__iOS_.framework */; };
+		64B7F156281110AD0087F083 /* cookinglearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7F12E281110AD0087F083 /* cookinglearningApp.swift */; };
+		64B7F15A281110AD0087F083 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B7F130281110AD0087F083 /* Assets.xcassets */; };
+		64B7F176281111820087F083 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7F171281111820087F083 /* ContentView.swift */; };
+		64B7F177281111820087F083 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7F173281111820087F083 /* Api.swift */; };
+		64B7F178281111820087F083 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7F175281111820087F083 /* AuthService.swift */; };
+		F3FF402003E8D045970D2E6D /* Pods_cookinglearning__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F763A11E2136B250706240DE /* Pods_cookinglearning__iOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D179D6F0484C8214254A0B8 /* Pods_cooking__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cooking__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64504124280FF77600CD075F /* cookingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cookingApp.swift; sourceTree = "<group>"; };
-		64504125280FF77600CD075F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		64504126280FF77700CD075F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F52F5F054905DE038913F99 /* Pods-cookinglearning (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cookinglearning (iOS).debug.xcconfig"; path = "Target Support Files/Pods-cookinglearning (iOS)/Pods-cookinglearning (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		64B7F12E281110AD0087F083 /* cookinglearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cookinglearningApp.swift; sourceTree = "<group>"; };
+		64B7F130281110AD0087F083 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64B7F135281110AD0087F083 /* cookinglearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookinglearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64B7F171281111820087F083 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		64B7F173281111820087F083 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		64B7F175281111820087F083 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		64B7F179281111A70087F083 /* cookinglearning (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cookinglearning (iOS).entitlements"; sourceTree = "<group>"; };
+		9A3C7DFC56D3D168BC313D01 /* Pods-cookinglearning (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cookinglearning (iOS).release.xcconfig"; path = "Target Support Files/Pods-cookinglearning (iOS)/Pods-cookinglearning (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		F763A11E2136B250706240DE /* Pods_cookinglearning__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cookinglearning__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		64504128280FF77700CD075F /* Frameworks */ = {
+		64B7F132281110AD0087F083 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FC9E5B8A0C4CE88BC86206E /* Pods_cooking__iOS_.framework in Frameworks */,
+				F3FF402003E8D045970D2E6D /* Pods_cookinglearning__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6450411E280FF77600CD075F = {
+		64B7F128281110AC0087F083 = {
 			isa = PBXGroup;
 			children = (
-				64504123280FF77600CD075F /* Shared */,
-				F70461CF5D057D04FE7E6B39 /* Frameworks */,
+				64B7F179281111A70087F083 /* cookinglearning (iOS).entitlements */,
+				64B7F12D281110AD0087F083 /* Shared */,
+				64B7F136281110AD0087F083 /* Products */,
+				EB541CAF38502CE822A1FBB7 /* Pods */,
+				AA2FB12387EE209F833F35A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		64504123280FF77600CD075F /* Shared */ = {
+		64B7F12D281110AD0087F083 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				64504124280FF77600CD075F /* cookingApp.swift */,
-				64504125280FF77600CD075F /* ContentView.swift */,
-				64504126280FF77700CD075F /* Assets.xcassets */,
+				64B7F172281111820087F083 /* api */,
+				64B7F174281111820087F083 /* service */,
+				64B7F170281111820087F083 /* view */,
+				64B7F12E281110AD0087F083 /* cookinglearningApp.swift */,
+				64B7F130281110AD0087F083 /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		F70461CF5D057D04FE7E6B39 /* Frameworks */ = {
+		64B7F136281110AD0087F083 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D179D6F0484C8214254A0B8 /* Pods_cooking__iOS_.framework */,
+				64B7F135281110AD0087F083 /* cookinglearning.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64B7F170281111820087F083 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				64B7F171281111820087F083 /* ContentView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		64B7F172281111820087F083 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				64B7F173281111820087F083 /* Api.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		64B7F174281111820087F083 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				64B7F175281111820087F083 /* AuthService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		AA2FB12387EE209F833F35A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F763A11E2136B250706240DE /* Pods_cookinglearning__iOS_.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB541CAF38502CE822A1FBB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F52F5F054905DE038913F99 /* Pods-cookinglearning (iOS).debug.xcconfig */,
+				9A3C7DFC56D3D168BC313D01 /* Pods-cookinglearning (iOS).release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6450412A280FF77700CD075F /* cooking (iOS) */ = {
+		64B7F134281110AD0087F083 /* cookinglearning (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64504154280FF77700CD075F /* Build configuration list for PBXNativeTarget "cooking (iOS)" */;
+			buildConfigurationList = 64B7F15E281110AD0087F083 /* Build configuration list for PBXNativeTarget "cookinglearning (iOS)" */;
 			buildPhases = (
-				0DA2F7157348BEC6A13F5E4C /* [CP] Check Pods Manifest.lock */,
-				64504127280FF77700CD075F /* Sources */,
-				64504128280FF77700CD075F /* Frameworks */,
-				64504129280FF77700CD075F /* Resources */,
+				F312B36B202610DDC87F2AB8 /* [CP] Check Pods Manifest.lock */,
+				64B7F131281110AD0087F083 /* Sources */,
+				64B7F132281110AD0087F083 /* Frameworks */,
+				64B7F133281110AD0087F083 /* Resources */,
+				CDB9507B48B0258C12E0B94B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "cooking (iOS)";
-			productName = "cooking (iOS)";
+			name = "cookinglearning (iOS)";
+			productName = "cookinglearning (iOS)";
+			productReference = 64B7F135281110AD0087F083 /* cookinglearning.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6450411F280FF77600CD075F /* Project object */ = {
+		64B7F129281110AC0087F083 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					6450412A280FF77700CD075F = {
+					64B7F134281110AD0087F083 = {
 						CreatedOnToolsVersion = 13.3.1;
-					};
-					64504130280FF77700CD075F = {
-						CreatedOnToolsVersion = 13.3.1;
-					};
-					64504137280FF77700CD075F = {
-						CreatedOnToolsVersion = 13.3.1;
-						TestTargetID = 6450412A280FF77700CD075F;
-					};
-					64504143280FF77700CD075F = {
-						CreatedOnToolsVersion = 13.3.1;
-						TestTargetID = 64504130280FF77700CD075F;
 					};
 				};
 			};
-			buildConfigurationList = 64504122280FF77600CD075F /* Build configuration list for PBXProject "cooking" */;
+			buildConfigurationList = 64B7F12C281110AC0087F083 /* Build configuration list for PBXProject "cookinglearning" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,28 +157,46 @@
 				en,
 				Base,
 			);
-			mainGroup = 6450411E280FF77600CD075F;
+			mainGroup = 64B7F128281110AC0087F083;
+			productRefGroup = 64B7F136281110AD0087F083 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6450412A280FF77700CD075F /* cooking (iOS) */,
+				64B7F134281110AD0087F083 /* cookinglearning (iOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		64504129280FF77700CD075F /* Resources */ = {
+		64B7F133281110AD0087F083 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64504150280FF77700CD075F /* Assets.xcassets in Resources */,
+				64B7F15A281110AD0087F083 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DA2F7157348BEC6A13F5E4C /* [CP] Check Pods Manifest.lock */ = {
+		CDB9507B48B0258C12E0B94B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cookinglearning (iOS)/Pods-cookinglearning (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cookinglearning (iOS)/Pods-cookinglearning (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cookinglearning (iOS)/Pods-cookinglearning (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F312B36B202610DDC87F2AB8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -148,7 +211,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-cooking (iOS)-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-cookinglearning (iOS)-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -158,19 +221,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		64504127280FF77700CD075F /* Sources */ = {
+		64B7F131281110AD0087F083 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6450414E280FF77700CD075F /* ContentView.swift in Sources */,
-				6450414C280FF77700CD075F /* cookingApp.swift in Sources */,
+				64B7F177281111820087F083 /* Api.swift in Sources */,
+				64B7F176281111820087F083 /* ContentView.swift in Sources */,
+				64B7F156281110AD0087F083 /* cookinglearningApp.swift in Sources */,
+				64B7F178281111820087F083 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		64504152280FF77700CD075F /* Debug */ = {
+		64B7F15C281110AD0087F083 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -228,7 +293,7 @@
 			};
 			name = Debug;
 		};
-		64504153280FF77700CD075F /* Release */ = {
+		64B7F15D281110AD0087F083 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -279,13 +344,16 @@
 			};
 			name = Release;
 		};
-		64504155280FF77700CD075F /* Debug */ = {
+		64B7F15F281110AD0087F083 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F52F5F054905DE038913F99 /* Pods-cookinglearning (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "cookinglearning (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97YACL9S6W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -299,8 +367,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nowcent.cooking;
-				PRODUCT_NAME = cooking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nowcent.cookinglearning;
+				PRODUCT_NAME = cookinglearning;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -308,13 +376,16 @@
 			};
 			name = Debug;
 		};
-		64504156280FF77700CD075F /* Release */ = {
+		64B7F160281110AD0087F083 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A3C7DFC56D3D168BC313D01 /* Pods-cookinglearning (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "cookinglearning (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 97YACL9S6W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -328,8 +399,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nowcent.cooking;
-				PRODUCT_NAME = cooking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nowcent.cookinglearning;
+				PRODUCT_NAME = cookinglearning;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,25 +412,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		64504122280FF77600CD075F /* Build configuration list for PBXProject "cooking" */ = {
+		64B7F12C281110AC0087F083 /* Build configuration list for PBXProject "cookinglearning" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64504152280FF77700CD075F /* Debug */,
-				64504153280FF77700CD075F /* Release */,
+				64B7F15C281110AD0087F083 /* Debug */,
+				64B7F15D281110AD0087F083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64504154280FF77700CD075F /* Build configuration list for PBXNativeTarget "cooking (iOS)" */ = {
+		64B7F15E281110AD0087F083 /* Build configuration list for PBXNativeTarget "cookinglearning (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64504155280FF77700CD075F /* Debug */,
-				64504156280FF77700CD075F /* Release */,
+				64B7F15F281110AD0087F083 /* Debug */,
+				64B7F160281110AD0087F083 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6450411F280FF77600CD075F /* Project object */;
+	rootObject = 64B7F129281110AC0087F083 /* Project object */;
 }
