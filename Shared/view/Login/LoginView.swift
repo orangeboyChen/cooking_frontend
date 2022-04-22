@@ -8,9 +8,13 @@ import AuthenticationServices
 import SwiftyJSON
 struct LoginView: View {
     
+    
     let authController = AuthController()
 
     @AppStorage("token", store: UserDefaults.standard) var token = ""
+    @AppStorage("isLogin", store: UserDefaults.standard) var isLogin = false
+    
+    @ObservedObject var viewModel: ContentViewModelView
     
     var body: some View {
         ZStack {
@@ -24,11 +28,16 @@ struct LoginView: View {
                 Spacer()
                 SignUpWithAppleButton()
                         .onTapGesture {
+                            print(viewModel.isLogin)
                             authController.signInWithApple { identityToken, fullName in
                                 Api.login(identityToken: identityToken).responseString { response in
                                     let json = JSON(parseJSON: response.value ?? "")
                                     if json["code"].intValue == 200 {
                                         token = json["token"].stringValue
+                                        withAnimation {
+                                            viewModel.isLogin = true
+                                            isLogin=viewModel.isLogin
+                                        }
                                     }
                                 }
                             }
@@ -86,6 +95,7 @@ extension AuthController: ASAuthorizationControllerDelegate {
         if let onReceiveToken = onReceiveToken {
             onReceiveToken(identityToken, fullName)
         }
+        
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {

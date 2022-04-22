@@ -60,7 +60,8 @@ class TabInfo: ObservableObject {
 }
 
 class ContentViewModelView: ObservableObject {
-    @Published var isLogin = true
+    @Published var isLogin = UserDefaults.standard.bool(forKey: "isLogin")
+
 }
 
 struct ContentView: View {
@@ -73,10 +74,13 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            if vm.isLogin {
-                LoginView()
+            if !vm.isLogin {
+                LoginView(viewModel: vm)
             }
             else {
+                Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+                    vm.isLogin=false
+                }.offset(y:-100)
                 Group {
                     switch tabInfo.pageType {
                     case .favorite:
