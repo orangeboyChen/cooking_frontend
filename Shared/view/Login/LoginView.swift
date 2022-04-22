@@ -6,10 +6,11 @@ import Foundation
 import SwiftUI
 import AuthenticationServices
 import SwiftyJSON
-
 struct LoginView: View {
     
     let authController = AuthController()
+
+    @AppStorage("token", store: UserDefaults.standard) var token = ""
     
     var body: some View {
         ZStack {
@@ -23,14 +24,12 @@ struct LoginView: View {
                 Spacer()
                 SignUpWithAppleButton()
                         .onTapGesture {
-                            authController.signInWithApple { identityToken in
-                                Api.login(identityToken: identityToken).responseJSON { response in
-                                    print(response.value ?? "???")
-                                    let responseValue:JSON=JSON(response.value)
-                                    let responseData=responseValue["data"]
-                                    let responseToken=responseData["token"].stringValue
-                                    print(responseToken)
-                                    UserDefaults.standard.set(responseToken, forKey: "token")
+                            authController.signInWithApple { identityToken, fullName in
+                                Api.login(identityToken: identityToken).responseString { response in
+                                    let json = JSON(parseJSON: response.value ?? "")
+                                    if json["code"].intValue == 200 {
+                                        token = json["token"].stringValue
+                                    }
                                 }
                             }
                         }
@@ -56,9 +55,9 @@ struct SignUpWithAppleButton: UIViewRepresentable {
 
 class AuthController: NSObject {
 
-    var onReceiveToken: ((String) -> Void)? = nil
+    var onReceiveToken: ((String, String) -> Void)? = nil
 
-    func signInWithApple(_ onReceiveToken: @escaping (String) -> Void) {
+    func signInWithApple(_ onReceiveToken: @escaping (String, String) -> Void) {
         self.onReceiveToken = onReceiveToken
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
@@ -75,16 +74,18 @@ extension AuthController: ASAuthorizationControllerDelegate {
             return
         }
         
-        let fullNameData = auth.fullName
-        
-        let fullName=((fullNameData?.familyName ?? "") + (fullNameData?.givenName ?? ""))
-
-        
         guard let identityTokenData = auth.identityToken, let identityToken = String(data: identityTokenData, encoding: .utf8) else {
             return
         }
 
-        onReceiveToken!(identityToken)
+        guard let fullNameData = auth.fullName else {
+            return
+        }
+
+        let fullName = (fullNameData.familyName ?? "") + (fullNameData.givenName ?? "")
+        if let onReceiveToken = onReceiveToken {
+            onReceiveToken(identityToken, fullName)
+        }
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
