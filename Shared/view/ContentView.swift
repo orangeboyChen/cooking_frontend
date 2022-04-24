@@ -61,7 +61,8 @@ class TabInfo: ObservableObject {
 
 class ContentViewModelView: ObservableObject {
     @Published var isLogin = UserDefaults.standard.bool(forKey: "isLogin")
-
+    @Published var isSignUp = true
+    
 }
 
 struct ContentView: View {
@@ -77,7 +78,13 @@ struct ContentView: View {
             if !vm.isLogin {
                 LoginView(viewModel: vm)
             }
-            else {
+            else if !vm.isSignUp{
+                UserProfile(viewModel: vm)
+            }
+            else{
+                Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+                    Api.getUserInfo()
+                }.offset(y:-200)
                 Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
                     vm.isLogin=false
                 }.offset(y:-100)
@@ -111,7 +118,7 @@ struct ContentView: View {
             }
             
             
-
+            
         }
         .environmentObject(tabInfo)
     }
@@ -182,4 +189,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 

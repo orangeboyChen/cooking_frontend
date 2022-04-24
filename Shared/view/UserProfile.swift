@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UIKit
+import SwiftyJSON
 
 struct UserProfile: View {
     @State private var nickName :String=""
@@ -14,6 +15,7 @@ struct UserProfile: View {
     @State private var gender:Int=0
     @State private var isShowPhotoLibrary = false
     @State private var image=UIImage()
+    
     
     
     var bindingDate : Binding<Date>
@@ -27,6 +29,8 @@ struct UserProfile: View {
                 birthday = formatter.string(from: $0)
             })
     }
+    
+    @ObservedObject var viewModel: ContentViewModelView
     
     var body: some View {
         VStack {
@@ -75,7 +79,14 @@ struct UserProfile: View {
                 
                 Button("确认修改") {
                     Api.updateUserInfo(birthday: birthday, gender: gender, nickName: nickName).responseString{response in
-                        print(response.value ?? "草泥马没有")}
+                        let json1 = JSON(parseJSON: response.value ?? "")
+                        if json1["code"].intValue == 200 {
+                            viewModel.isSignUp = true
+                        }
+                        else{
+                            viewModel.isSignUp = false
+                        }
+                    }
                     let imageData = self.image.jpegData(compressionQuality: 0.8)
                     let fullPath=NSHomeDirectory().appending("/temp/avatar.jpeg")
                     
@@ -93,7 +104,15 @@ struct UserProfile: View {
                     print("传图片")
                     
                     Api.uploadUserAvatar(userAvatarURL: userAvatarURL).responseString{response in
-                        print(response.value ?? "草泥马没有")}
+                        let json2 = JSON(parseJSON: response.value ?? "")
+                        if json2["code"].intValue == 200 && viewModel.isSignUp{
+                            viewModel.isSignUp = true
+                        }
+                        else{
+                            viewModel.isSignUp = false
+                        }
+                    }
+                    
                 }
             }
             
@@ -104,11 +123,11 @@ struct UserProfile: View {
     }
 }
 
-struct UserProfile_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfile()
-    }
-}
+//struct UserProfile_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UserProfile()
+//    }
+//}
 
 
 
