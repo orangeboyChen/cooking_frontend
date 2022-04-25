@@ -7,21 +7,6 @@ import SwiftUI
 import AuthenticationServices
 import SwiftyJSON
 
-struct userInfo:Codable,Hashable{
-    var nickname:String
-    var avatar:String
-    var birthday:Int
-    var gender:Int
-    init()  {
-        nickname = "nonickname"
-        avatar = "noavatar"
-        birthday = 0
-        gender = 0
-    }
-}
-
-var user=userInfo()
-
 struct LoginView: View {
     
     
@@ -57,7 +42,8 @@ struct LoginView: View {
                                         viewModel.isLogin = true
                                         isLogin=viewModel.isLogin
                                     }
-                                    //user=Api.getUserInfo()
+                                    user=Api.getUserInfo()
+                                    print(user)
                                     if user.avatar == "noavatar"&&user.birthday == 0{
                                         withAnimation{
                                             viewModel.isSignUp = false
