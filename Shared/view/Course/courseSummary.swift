@@ -9,23 +9,41 @@ import SwiftUI
 
 struct courseSummary: View {
     var body: some View {
-        HStack {
-            VStack {
+            ZStack (alignment: .bottom){
+                Image("qwe")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width:300, height: 300)
+                .clipped()
+                .cornerRadius(25)
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+                    .alignmentGuide(VerticalAlignment.bottom, computeValue: { d in
+                        290
+                    })
+                    .alignmentGuide(HorizontalAlignment.center, computeValue: { d in
+                        -110
+                    })
+                
                 HStack {
-                    Text(" 菜名")
+                    VStack {
+                        Text("菜名")
+                            .foregroundColor(Color.white)
                         .font(.title)
-                        .fontWeight(.black)
-                    Spacer()
+                        Text("tags")
+                            .foregroundColor(Color.white)
+                            .font(.title3)
+                    }
+                    
                 }
-                Text("菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介菜品简介")
-                    .font(.subheadline)
-                Spacer()
-            }
-            .frame(width: 260)
-            Image("qwe")
-                .resizable()
-
-        }
+                .frame(width: 300)
+                .background(Color.gray.opacity(0.5))
+                .alignmentGuide(VerticalAlignment.bottom, computeValue: { d in
+                    72
+                })
+                
+            }.frame(width:300, height: 300)
+        
 
     }
 }

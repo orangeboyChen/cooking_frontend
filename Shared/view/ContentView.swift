@@ -75,10 +75,8 @@ struct ContentView: View {
     @StateObject var vm = ContentViewModelView()
     
     var body: some View {
-        ZStack {
-            courseSummary()
-                .frame(height: 200)
-                .offset(y:-150)
+        ZStack{
+                courseSummary()
             if !vm.isLogin {
                 LoginView(viewModel: vm)
             }
@@ -193,5 +191,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
 
 
