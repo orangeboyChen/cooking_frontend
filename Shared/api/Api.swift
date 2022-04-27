@@ -15,12 +15,11 @@ class Api {
         "Authorization":Token
     ]
     
-    
     static func login(identityToken: String) -> DataRequest {
         AF.request("\(BASE_URL)/login", method: .post, parameters: ["identityToken": identityToken], encoder: JSONParameterEncoder.default)
     }
     
-    static func getUserInfo()->userInfo{
+    static func getUserInfo() -> userInfo{
         var userIn = userInfo()
         AF.request("\(BASE_URL)/user",method: .get,headers: headers).responseString{response in
             let json = JSON(parseJSON: response.value ?? "")

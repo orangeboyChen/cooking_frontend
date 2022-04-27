@@ -1,3 +1,4 @@
+
 //
 // Created by orangeboy Chen on 2022/4/21.
 //
@@ -42,16 +43,16 @@ struct LoginView: View {
                                         viewModel.isLogin = true
                                         isLogin=viewModel.isLogin
                                     }
-                                    user=Api.getUserInfo()
+                                    user = Api.getUserInfo()
                                     print(user)
                                     if user.avatar == "noavatar"&&user.birthday == 0{
                                         withAnimation{
                                             viewModel.isSignUp = false
                                         }
                                     }
-                                        
                                 }
                             }
+                        
                         }
                     }
                     .cornerRadius(10.0)

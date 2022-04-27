@@ -1,3 +1,4 @@
+
 //
 //  ContentView.swift
 //  Shared
@@ -75,6 +76,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
+            courseSummary()
+                .frame(height: 200)
+                .offset(y:-150)
             if !vm.isLogin {
                 LoginView(viewModel: vm)
             }
