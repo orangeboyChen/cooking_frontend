@@ -14,7 +14,10 @@ class Api {
     static let headers: HTTPHeaders=[
         "Authorization":Token
     ]
-    
+    ///
+    /// 登录接口
+    /// - Parameter identityToken:
+    /// - Returns:
     static func login(identityToken: String) -> DataRequest {
         AF.request("\(BASE_URL)/login", method: .post, parameters: ["identityToken": identityToken], encoder: JSONParameterEncoder.default)
     }
