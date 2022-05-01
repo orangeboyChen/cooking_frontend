@@ -6,33 +6,39 @@
 //
 
 import SwiftUI
-
+import SwiftUIX
 struct RecommendView: View {
     
+    @State var keyword = ""
+    
     var body: some View {
-        List{
-            SearchBar(text: .constant(""))
-            Button(action: {
-                //navigation到上传菜品
-            }){
-                HStack {
-                    Spacer()
-                    Image(systemName: "square.and.arrow.up")
-                    Text("上传菜品")
-                    Spacer()
-                }
-                .font(.title2)
-                .padding(5)
-                .background(Color.systemBlue)
-                .foregroundColor(Color.white)
-                .cornerRadius(20).padding(10)
+        ScrollView {
+            SearchBar("搜索", text: $keyword.animation())
+                .padding(.horizontal, 8.0)
+            VStack {
                
-            }
-            ForEach (1..<7){ i in
-                ShowCourse()
+                Button(action: {
+                    //navigation到上传菜品
+                }){
+                    HStack {
+                        Spacer()
+                        Image(systemName: "square.and.arrow.up")
+                        Text("上传菜品")
+                        Spacer()
+                    }
+                    .padding(15)
+                    .background(Color.systemBlue.opacity(0.1))
+                    .foregroundColor(Color.systemBlue)
+                    .cornerRadius(10)
                     
+                }
+                ForEach (1..<7){ i in
+                    ShowCourse()
+                        .padding(.vertical, 4.0)
+                    
+                }
             }
-            
+            .padding(.horizontal, 16.0)
         }
     }
 
