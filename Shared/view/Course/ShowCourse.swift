@@ -17,11 +17,10 @@ struct ShowCourse: View {
                 .clipped()
                 .cornerRadius(25)
             Image(systemName: "heart.fill")
-                .resizable()
                 .foregroundColor(.red)
-                .frame(width: 35, height: 35)
+                .font(.title)
                 .alignmentGuide(VerticalAlignment.bottom, computeValue: { d in
-                    290
+                    190
                 })
                 .alignmentGuide(HorizontalAlignment.center, computeValue: { d in
                     -95
@@ -44,7 +43,7 @@ struct ShowCourse: View {
                 72
             })
             
-        }.frame(width:300, height: 300)
+        }.frame(width:300, height: 200)
         
         
     }

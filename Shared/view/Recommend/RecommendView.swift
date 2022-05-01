@@ -8,9 +8,34 @@
 import SwiftUI
 
 struct RecommendView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            SearchBar(text: .constant(""))
+            Button(action: {
+                //navigation到上传菜品
+            }){
+                HStack {
+                    Spacer()
+                    Image(systemName: "square.and.arrow.up")
+                    Text("上传菜品")
+                    Spacer()
+                }
+                .font(.title2)
+                .padding(5)
+                .background(Color.systemBlue)
+                .foregroundColor(Color.white)
+                .cornerRadius(20).padding(10)
+               
+            }
+            ForEach (1..<7){ i in
+                ShowCourse()
+                    
+            }
+            
+        }
     }
+
 }
 
 struct RecommendView_Previews: PreviewProvider {
