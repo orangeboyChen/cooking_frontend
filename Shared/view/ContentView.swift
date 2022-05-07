@@ -76,7 +76,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack{
-                ShowCourse()
             if !vm.isLogin {
                 LoginView(viewModel: vm)
             }
@@ -84,12 +83,6 @@ struct ContentView: View {
                 UserProfile(viewModel: vm)
             }
             else{
-                Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                    Api.getUserInfo()
-                }.offset(y:-200)
-                Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                    vm.isLogin=false
-                }.offset(y:-100)
                 Group {
                     switch tabInfo.pageType {
                     case .favorite:

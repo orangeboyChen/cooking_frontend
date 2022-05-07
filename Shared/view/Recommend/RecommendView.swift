@@ -47,5 +47,6 @@ struct RecommendView: View {
 struct RecommendView_Previews: PreviewProvider {
     static var previews: some View {
         RecommendView()
+            .previewDevice("iPhone 13 Pro")
     }
 }
