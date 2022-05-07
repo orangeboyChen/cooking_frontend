@@ -9,32 +9,46 @@ import SwiftUI
 
 struct CourseDetail: View {
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                VStack {
-                    Image("hongshaorou")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .overlay(.black.opacity(0.2))
-                }
-                .maxHeight(250)
-                .clipped()
-                
+        ZStack {
+            ScrollView {
                 VStack(alignment: .leading) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("🐷红烧肉").font(.largeTitle).fontWeight(.bold)
-                        Text("🌶️🌶️🌶️")
+                    VStack {
+                        Image("hongshaorou")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .overlay(.black.opacity(0.2))
                     }
-                    .padding(.bottom, 3.0)
+                    .maxHeight(250)
+                    .clipped()
                     
-                    
-                    Text("1111111111111简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介")
-                        .font(.caption)
-                        .lineLimit(3)
-                    
-                    Spacer().frame(height: 30)
-                    Group {
-                        Text("配料")
+                    VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("🐷红烧肉").font(.largeTitle).fontWeight(.bold)
+                            Text("🌶️🌶️🌶️")
+                        }
+                        .padding(.bottom, 3.0)
+                        
+                        
+                        Text("1111111111111简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介")
+                            .font(.caption)
+                            .lineLimit(3)
+                        
+                        Spacer().frame(height: 30)
+                        Group {
+                            Text("配料")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .background(Rectangle()
+                                    .foregroundColor(.green)
+                                    .frame(height: 8)
+                                    .offset(x: 0, y: -3)
+                                            , alignment: .bottom)
+                            Text("qewwejasljflasjd;fjklasdjfkasdhjfklasjhifkas").font(.caption)
+                        }
+                        
+                        Spacer().frame(height: 40)
+                        Text("步骤")
                             .font(.title)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -43,52 +57,55 @@ struct CourseDetail: View {
                                 .frame(height: 8)
                                 .offset(x: 0, y: -3)
                                         , alignment: .bottom)
-                        Text("qewwejasljflasjd;fjklasdjfkasdhjfklasjhifkas").font(.caption)
-                    }
-                    
-                    Spacer().frame(height: 40)
-                    Text("步骤")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .background(Rectangle()
-                            .foregroundColor(.green)
-                            .frame(height: 8)
-                            .offset(x: 0, y: -3)
-                                    , alignment: .bottom)
-                    
-                    ForEach(1..<12) { i in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text("\(i)")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    
-                                Text("/")
-                                    .font(.title)
-                                    .fontWeight(.black)
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.leading, -6.0)
-                                    .foregroundColor(.orange)
-                                Spacer()
+                        
+                        ForEach(1..<12) { i in
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text("\(i)")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        
+                                    Text("/")
+                                        .font(.title)
+                                        .fontWeight(.black)
+                                        .multilineTextAlignment(.leading)
+                                        .padding(.leading, -6.0)
+                                        .foregroundColor(.orange)
+                                    Spacer()
+                                }
+                                
+                                Spacer().frame(height: 5)
+                                Text("焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水")
                             }
-                            
-                            Spacer().frame(height: 5)
-                            Text("焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水焯水")
+                            Spacer().frame(height: 20)
                         }
-                        Spacer().frame(height: 20)
+                        
+                        
+
                     }
                     
-                    
-
-                }
-                
-                .padding()
-                    
-                    
-                }
+                    .padding()
+                        
+                        
+                    }
+            }
+            .edgesIgnoringSafeArea(.top)
+            Button(action: {
+                print("asd")
+            }){
+                Text("开始制作本菜")
+                    .font(.title2)
+                Image(systemName: "fork.knife")
+                    .font(.title2)
+            }
+            .padding()
+            .background(Material.ultraThin)
+            .opacity(0.9)
+            .foregroundColor(.systemBlue)
+            .cornerRadius(100)
+            .offset(y:250)
+            
         }
-        .edgesIgnoringSafeArea(.top)
         
 //        List{
 //            Image("hongshaorou")
