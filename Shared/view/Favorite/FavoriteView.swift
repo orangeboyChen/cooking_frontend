@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct FavoriteView: View {
-    @State private var showBreakfast = true
-    @State private var showLunch = true
-    @State private var showDinner = true
     
     var body: some View {
         VStack {

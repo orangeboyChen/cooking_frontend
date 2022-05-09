@@ -22,7 +22,8 @@ struct countDown: View {
             Text("\(remainTime)")
                 .font(.largeTitle)
                 .bold()
-            ProgressView(value: countDownPrecent)
+            ProgressView(value: 0.5)
+                .progressViewStyle(MyProgressViewStyle())
         }
         .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect(), perform: { _ in
             if self.remainTime == -1 {
@@ -33,6 +34,29 @@ struct countDown: View {
                 self.countDownPrecent = 1-(Double(remainTime)/Double(stepTime))
             }
         })
+    }
+    struct MyProgressViewStyle:ProgressViewStyle{
+        let foregroundColor:Color
+        let backgroundColor:Color
+        init(foregroundColor:Color = .orange,backgroundColor:Color = .systemGray3){
+            self.foregroundColor = foregroundColor
+            self.backgroundColor = backgroundColor
+        }
+        func makeBody(configuration: Configuration) -> some View {
+            GeometryReader{ proxy in
+                ZStack(alignment:.topLeading){
+                    backgroundColor
+                    Rectangle()
+                        .fill(foregroundColor)
+                        .frame(width:proxy.size.width * CGFloat(configuration.fractionCompleted ?? 0.0))
+                }.clipShape(RoundedRectangle(cornerRadius: 10))
+                    .overlay(
+                        configuration.label
+                            .foregroundColor(.white)
+                    )
+            }
+            .height(20)
+        }
     }
 }
 

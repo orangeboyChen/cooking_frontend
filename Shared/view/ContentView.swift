@@ -17,7 +17,7 @@ enum TabType {
     var title: String {
         switch self {
         case .favorite:
-            return "收藏"
+            return "计划"
         case .recommend:
             return "推荐"
         case .my:
