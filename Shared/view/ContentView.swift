@@ -76,7 +76,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack{
-            countDown(stepTime: 100)
             if !vm.isLogin {
                 LoginView(viewModel: vm)
             }
