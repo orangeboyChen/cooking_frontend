@@ -49,17 +49,17 @@ struct ShowCourse: View {
         
         VStack(alignment: .leading) {
             VStack {
+                NavigationLink(
+                    destination: CourseDetail(),
+                    label: {
+                        Image("hongshaorou")
+                            .sizeToFit()
+                            .aspectRatio(contentMode: .fill)
+                            .overlay(
+                                .black.opacity(0.3)
+                            )
+                    })
                 //Todo:这里暂时用button，以后要改成navigationlink
-                Button {
-                    
-                } label: {
-                    Image("hongshaorou")
-                        .sizeToFit()
-                        .aspectRatio(contentMode: .fill)
-                        .overlay(
-                            .black.opacity(0.3)
-                        )
-                }
             }
             .frame(height: 200)
             .clipped()
