@@ -40,7 +40,7 @@ struct MyView: View {
                             .font(.title)
                     }.padding()
                     VStack{
-                        ShowCourse()
+                        RecommendCourseCard()
                             .padding(.vertical, 4.0)
                     }
                     .padding(.horizontal)
@@ -57,7 +57,7 @@ struct MyView: View {
                             .font(.title)
                     }.padding()
                     VStack{
-                        ShowCourse()
+                        RecommendCourseCard()
                             .padding(.vertical, 4.0)
                     }
                     .padding(.horizontal)

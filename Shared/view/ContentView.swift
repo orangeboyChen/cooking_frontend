@@ -93,21 +93,22 @@ struct ContentView: View {
                         MyView()
                     }
                 }
-                .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
-                    .onEnded({ value in
-                        if value.translation.height < 0 {
-                            withAnimation {
-                                tabInfo.isShowingTabBar = false
-                            }
-                            
-                        }
-                        
-                        if value.translation.height > 0 {
-                            withAnimation {
-                                tabInfo.isShowingTabBar = true
-                            }
-                        }
-                    }))
+//                .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+//                    .onEnded({ value in
+//                        print("high")
+//                        if value.translation.height < 0 {
+//                            withAnimation {
+//                                tabInfo.isShowingTabBar = false
+//                            }
+//
+//                        }
+//
+//                        if value.translation.height > 0 {
+//                            withAnimation {
+//                                tabInfo.isShowingTabBar = true
+//                            }
+//                        }
+//                    }))
                 
                 TabBar()
             }
@@ -141,7 +142,7 @@ struct TabBar: View {
                 .background(
                     Rectangle()
                         .opacity(0.1)
-                        .background(VisualEffectBlurView(blurStyle: .systemThinMaterialDark))
+                        .background(VisualEffectBlurView(blurStyle: .systemThinMaterialLight))
                 )
                 .cornerRadius(20.0)
                 .padding()
@@ -171,7 +172,7 @@ struct TabBarButton: View {
                     Text(pageType.title)
                         .font(.caption)
                 }
-                .foregroundColor(tabInfo.pageType == pageType ? Color(hexadecimal6: 0xFFC300) : .gray)
+                .foregroundColor(tabInfo.pageType == pageType ? Color(hexadecimal6: 0xFFB300) : Color(UIColor.darkGray))
                 .padding(4.0)
             }
             
@@ -184,6 +185,10 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+
+
 
 
 

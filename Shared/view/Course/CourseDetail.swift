@@ -107,6 +107,7 @@ struct CourseDetail: View {
                         
                     }
             }
+
             .edgesIgnoringSafeArea(.top)
             Button(action: {
                 print("asd")
@@ -124,6 +125,7 @@ struct CourseDetail: View {
             .offset(y:250)
             
         }
+        
         
 //        List{
 //            Image("hongshaorou")

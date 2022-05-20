@@ -14,35 +14,42 @@ struct RecommendView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                SearchBar("搜索", text: $keyword.animation())
-                    .padding(.horizontal, 8.0)
                 VStack {
-                    
-                    Button(action: {
-                        //navigation到上传菜品
-                    }){
-                        HStack {
-                            Spacer()
-                            Image(systemName: "square.and.arrow.up")
-                            Text("上传菜品")
-                            Spacer()
+                    SearchBar("搜索", text: $keyword.animation())
+                        .padding(.horizontal, 8.0)
+                    VStack {
+                        
+                        Button(action: {
+                            //navigation到上传菜品
+                        }){
+                            HStack {
+                                Spacer()
+                                Image(systemName: "square.and.arrow.up")
+                                Text("上传菜品")
+                                Spacer()
+                            }
+                            .padding(15)
+                            .background(Color.systemBlue.opacity(0.1))
+                            .foregroundColor(Color.systemBlue)
+                            .cornerRadius(10)
+                            
                         }
-                        .padding(15)
-                        .background(Color.systemBlue.opacity(0.1))
-                        .foregroundColor(Color.systemBlue)
-                        .cornerRadius(10)
+                        VStack {
+                            ForEach (1..<7){ i in
+                                RecommendCourseCard()
+                                    .padding(.vertical, 4.0)
+                                    
+                                
+                            }
+                        }
+                        Spacer()
                         
                     }
-                    ForEach (1..<7){ i in
-                        ShowCourse()
-                            .padding(.vertical, 4.0)
-                        
-                    }
+                    .padding(.horizontal, 16.0)
                 }
-                .padding(.horizontal, 16.0)
             }
             .navigationTitle("推荐")
-            .navigationBarHidden(true)
+            
         }
     }
 

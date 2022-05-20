@@ -6,161 +6,143 @@
 //
 
 import SwiftUI
-
+import SwiftUIX
 struct FavoriteView: View {
     
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                    print("asd")
-                }){
-                    Image(systemName: "chevron.left.circle")
-                        .font(.title2)
-                }
-                Spacer()
-                Text("2022年1月1日")
-                    .font(.title2)
-                Spacer()
-                Button(action: {
-                    print("asd")
-                }){
-                    Image(systemName: "chevron.right.circle")
-                        .font(.title2)
-                        .foregroundColor(.systemGray)
-                }
-            }
-            .padding()
+        ZStack {
             ScrollView{
-                Group{
-                    VStack(alignment:.leading) {
-                    HStack {
-                        Text("材料")
-                            .font(.title)
-                            .bold()
-                            .padding([.top, .leading], 10.0)
-                            .padding(.bottom, -10.0)
-                        Spacer()
-                    }
-                    VStack(alignment:.leading) {
-                        Text("主食:")
-                            .font(.title2)
-                            .bold()
-                            .padding(.bottom, 4.0)
-                        Text("sadsadasdasdasdasdasd")
-                            .padding(.bottom, 4.0)
-                        Text("蔬菜:")
-                            .font(.title2)
-                            .bold()
-                            .padding(.bottom, 4.0)
-                        Text("sadsadasdasdasdasdasd")
-                            .padding(.bottom, 4.0)
-                        Text("肉类:")
-                            .font(.title2)
-                            .bold()
-                            .padding(.bottom, 4.0)
-                        Text("sadsadasdasdasdasdasd")
-                            .padding(.bottom, 4.0)
-                        Text("调味品:")
-                            .font(.title2)
-                            .bold()
-                            .padding(.bottom, 4.0)
-                        Text("sadsadasdasdasdasdasd")
-                            .padding(.bottom, 4.0)
-                    }
-                    .padding()
-                    }
-                    
-                }
-                .padding(5.0)
-                .background(.white)
-                .cornerRadius(15)
-                .shadow(radius: 5, x : 8, y : 8)
-                .padding()
-                Group{
-                    VStack(alignment:.leading) {
-                        HStack {
-                            Text("菜品")
-                                .font(.title)
-                                .bold()
-                                .padding([.top, .leading], 10.0)
-                                .padding(.bottom, -10.0)
-                            Spacer()
-                        }
+                VStack {
+                    Spacer().frame(height: 120)
+                    VStack {
                         VStack(alignment:.leading) {
-                            Text("早餐:")
-                                .font(.title2)
-                                .bold()
-                                .padding(.bottom, 4.0)
-                            ForEach(0..<4) { i in
-                                Button(action: {
-                                    print("asd")
-                                }){
-                                    Text("sadasdasd")
-                                    Spacer()
-                                    Image(systemName: "chevron.right")
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                .padding(.bottom, 4.0)
+                            HStack {
+                                Text("你今天需要准备🥬")
+                                    .fontWeight(.bold)
+                                    .font(.title3)
+                                Spacer()
                             }
-                            Text("午餐:")
-                                .font(.title2)
-                                .bold()
-                                .padding(.bottom, 4.0)
-                            ForEach(0..<3) { i in
-                                Button(action: {
-                                    print("asd")
-                                }){
-                                    Text("sadasdasd")
+                            .padding(.bottom, 2.0)
+                            
+                            
+                            VStack(spacing: 10) {
+                                HStack {
+                                    Text("白菜")
                                     Spacer()
-                                    Image(systemName: "chevron.right")
+                                    Text("1斤")
                                 }
-                                .buttonStyle(PlainButtonStyle())
-                                .padding(.bottom, 4.0)
-                            }
-                            Text("晚餐:")
-                                .font(.title2)
-                                .bold()
-                                .padding(.bottom, 4.0)
-                            ForEach(0..<6) { i in
-                                Button(action: {
-                                    print("asd")
-                                }){
-                                    Text("sadasdasd")
+                                
+                                HStack {
+                                    Text("白菜")
                                     Spacer()
-                                    Image(systemName: "chevron.right")
+                                    Text("1斤")
                                 }
-                                .buttonStyle(PlainButtonStyle())
-                                .padding(.bottom, 4.0)
-                            }
-                            Text("宵夜:")
-                                .font(.title2)
-                                .bold()
-                                .padding(.bottom, 4.0)
-                            ForEach(0..<2) { i in
-                                Button(action: {
-                                    print("asd")
-                                }){
-                                    Text("sadasdasd")
+                                HStack {
+                                    Text("白菜")
                                     Spacer()
-                                    Image(systemName: "chevron.right")
+                                    Text("1斤")
                                 }
-                                .buttonStyle(PlainButtonStyle())
-                                .padding(.bottom, 4.0)
+                                HStack {
+                                    Text("白菜")
+                                    Spacer()
+                                    Text("1斤")
+                                }
+                                
                             }
                         }
                         .padding()
                     }
                     
+                    .background(.white)
+                    .cornerRadius(15)
+                    
+                    Spacer().frame(height: 15)
+                    VStack {
+                        VStack(alignment:.leading) {
+                            HStack {
+                                Text("早餐")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                Spacer()
+                            }
+                            .padding(.bottom, 2.0)
+                            
+                            
+                            VStack(spacing: 10) {
+                                HStack {
+                                    Image("hongshaorou")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 50, height: 50)
+                                        .clipped()
+                                        .cornerRadius(10)
+                                    VStack(alignment: .leading) {
+                                        Text("红烧肉")
+                                            .fontWeight(.bold)
+                                        Text("川菜")
+                                            .font(.caption)
+                                        Text("五花肉、酱油")
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                        Spacer()
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .font(.body, weight: .bold)
+                                        .foregroundColor(Color(UIColor.lightGray))
+                                    
+                                }
+                            }
+                        }
+                        .padding()
+                    }
+                    .background(.white)
+                    .cornerRadius(15)
                 }
-                .padding(5.0)
-                .background(.white)
-                .cornerRadius(15)
-                .shadow(radius: 5, x : 8, y : 8)
                 .padding()
+                
             }
+            .overlay(
+                VStack {
+                Spacer().frame(height: UIApplication.shared.statusBarFrame.height)
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        print("asd")
+                    }){
+                        Image(systemName: "arrowtriangle.left.fill")
+                            .foregroundColor(.black.opacity(0.3))
+                    }
+                    
+                    Text("2022年1月1日")
+                        .font(.title3)
+                        .padding(.horizontal, 20.0)
+                        .padding(.vertical, 4.0)
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                                .foregroundColor(.black.opacity(0.1))
+                        )
+                    
+                    
+                    Button(action: {
+                        print("asd")
+                    }){
+                        Image(systemName: "arrowtriangle.right.fill")
+                            .foregroundColor(.black.opacity(0.3))
+                    }
+                    Spacer()
+                }
+            }
+                .padding()
+                .background(VisualEffectBlurView(blurStyle: .light)),
+                alignment: .top
+            )
+            .background(.systemGray6)
         }
-        .background(.systemGray6)
+        .ignoresSafeArea(edges: .vertical)
+        
     }
     
 }

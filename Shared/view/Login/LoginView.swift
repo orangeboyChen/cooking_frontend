@@ -31,6 +31,14 @@ struct LoginView: View {
                 Spacer()
                 SignUpWithAppleButton()
                     .onTapGesture {
+                        #if DEBUG
+                        withAnimation{
+                            viewModel.isSignUp = true
+                            isLogin = true
+                        }
+                        return
+                        #endif
+
                         print(viewModel.isLogin)
                         authController.signInWithApple { identityToken, fullName in
                             Api.login(identityToken: identityToken).responseString { response in
