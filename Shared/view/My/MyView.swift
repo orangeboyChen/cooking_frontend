@@ -11,61 +11,150 @@ struct MyView: View {
     var body: some View {
         NavigationView{
             ScrollView{
-                Button(action: {
-                    print("asd")
-                }){
-                    Image("hongshaorou")
-                        .resizable()
-                        .clipShape(Circle())
-                        .frame(width: 80, height: 80)
-                    Text("好好好")
-                        .font(.system(size: 60))
-                        .foregroundColor(.black)
-                    Spacer()
-                    Text("编辑")
-                        .foregroundColor(.systemGray)
-                        .padding(.trailing, -7.0)
-                    Image(systemName: "chevron.right")
-                        .foregroundColor(.systemGray)
-                }
-                .padding()
-                Divider()
-                Group{
+                VStack {
+                    Spacer().frame(height: UIApplication.shared.statusBarFrame.height)
                     HStack {
-                        Text("收藏的菜")
-                            .font(.title)
-                            .bold()
+                        Button(action: {
+                            print("asd")
+                        }){
+                            Image("hongshaorou")
+                                .resizable()
+                                .clipShape(Circle())
+                                .frame(width: 50, height: 50)
+                            
+                        }
+                        VStack(alignment: .leading) {
+                            Text("张三")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                            Text("贡献了0道菜")
+                                .font(.system(size: 14.0))
+                                .foregroundColor(.gray)
+                        }
+                        
                         Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.title)
-                    }.padding()
-                    VStack{
-                        RecommendCourseCard()
-                            .padding(.vertical, 4.0)
                     }
-                    .padding(.horizontal)
+                    .padding()
+                    
+                    VStack {
+                        VStack {
+                            HStack {
+                                Text("收藏")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                Spacer()
+                            }
+                            HStack {
+                                Image("hongshaorou")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 50, height: 50)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                Image("hongshaorou")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 50, height: 50)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                Image("hongshaorou")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 50, height: 50)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                Image("hongshaorou")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 50, height: 50)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                
+                                Color.gray.opacity(0.2)
+                                    .frame(width: 50, height: 50)
+                                    .cornerRadius(10)
+                                    .overlay(Image(systemName: "ellipsis").foregroundColor(.gray))
+                                Spacer()
+                            }
+                        }
+                        .padding()
+                        
+                        HStack {
+                            
+                            Spacer()
+                        }
+                       
+                    }
+                    .background(Color(UIColor.systemBackground))
+                    .cornerRadius(15)
+                    .padding(.bottom, 8)
+                    
+                    VStack {
+                        VStack {
+                            HStack {
+                                Text("做过")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                Spacer()
+                            }
+                            HStack {
+                                Image("hongshaorou")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 50, height: 50)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                Image("hongshaorou")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 50, height: 50)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                Image("hongshaorou")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 50, height: 50)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                Image("hongshaorou")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 50, height: 50)
+                                    .clipped()
+                                    .cornerRadius(10)
+                                
+                                Color.gray.opacity(0.2)
+                                    .frame(width: 50, height: 50)
+                                    .cornerRadius(10)
+                                    .overlay(Image(systemName: "ellipsis").foregroundColor(.gray))
+                                Spacer()
+                            }
+                        }
+                        .padding()
+                        
+                        HStack {
+                            
+                            Spacer()
+                        }
+                        
+                    }
+                    .background(Color(UIColor.systemBackground))
+                    .cornerRadius(15)
+                    
                     
                 }
-                Divider()
-                Group{
-                    HStack {
-                        Text("做过的菜")
-                            .font(.title)
-                            .bold()
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.title)
-                    }.padding()
-                    VStack{
-                        RecommendCourseCard()
-                            .padding(.vertical, 4.0)
-                    }
-                    .padding(.horizontal)
-                }
+                .padding()
+                
             }
             .navigationTitle("我的")
             .navigationBarHidden(true)
+            .background(.systemGray6)
+            .ignoresSafeArea(edges: .vertical)
+            
         }
+        .background(.systemGray6)
+        
+
     }
 }
 
