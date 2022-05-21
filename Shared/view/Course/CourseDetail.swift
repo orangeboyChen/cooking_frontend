@@ -24,8 +24,8 @@ struct CourseDetail: View {
                     
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading, spacing: 0) {
-                            Text("🐷红烧肉").font(.largeTitle).fontWeight(.bold)
-                            Text("🥬")
+                            Text("红烧肉").font(.largeTitle).fontWeight(.bold)
+                            Text("🥩")
                         }
                         .padding(.bottom, 3.0)
                         
@@ -109,9 +109,7 @@ struct CourseDetail: View {
             }
 
             .edgesIgnoringSafeArea(.top)
-            Button(action: {
-                print("asd")
-            }){
+            NavigationLink(destination: MakeCourse()) {
                 Text("开始制作本菜")
                     .font(.title2)
                 Image(systemName: "fork.knife")
@@ -122,7 +120,8 @@ struct CourseDetail: View {
             .opacity(0.9)
             .foregroundColor(.systemBlue)
             .cornerRadius(100)
-            .offset(y:250)
+            .offset(y:280)
+            .navigationTitle("红烧肉")
             
         }
         

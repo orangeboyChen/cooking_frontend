@@ -15,7 +15,7 @@ struct ContentView: View {
             }
             VStack {
                 
-                Text("2")
+                Text("1")
                     .font(.title3)
             }
             .frame(width: 40, height: 40)
