@@ -9,51 +9,24 @@
 import SwiftUI
 
 struct RecommendCourseCard: View {
+    
+    @State var courseName="番茄炒蛋"
+    @State var courseTag="asdasd"
+    @State var pic="hongshaorou"
 
     let radius = 10.0
 
     @State var isStarred = false
 
     var body: some View {
-//        ZStack (alignment: .bottom){
-//            Image("hongshaorou")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .frame(width:300, height: 200)
-//                .clipped()
-//                .cornerRadius(25)
-//            Image(systemName: "heart.fill")
-//                .foregroundColor(.red)
-//                .font(.title)
-//                .alignmentGuide(VerticalAlignment.bottom, computeValue: { d in
-//                    190
-//                })
-//                .alignmentGuide(HorizontalAlignment.center, computeValue: { d in
-//                    -95
-//                })
-//
-//            HStack {
-//                VStack {
-//                    Text("菜名")
-//                        .foregroundColor(Color.white)
-//                        .font(.title)
-//                    Text("tags")
-//                        .foregroundColor(Color.white)
-//                        .font(.title3)
-//                }
-//
-//            }
-//            .frame(width: 300)
-//            .background(Color.gray.opacity(0.5))
-//
-//        }
+
 
         VStack(alignment: .leading) {
             VStack {
                 NavigationLink(
                     destination: CourseDetail(),
                     label: {
-                        Image("hongshaorou")
+                        Image(pic)
                             .sizeToFit()
                             .aspectRatio(contentMode: .fill)
                             .overlay(
@@ -69,9 +42,9 @@ struct RecommendCourseCard: View {
             .overlay(
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("青椒炒香蕉").font(.title).fontWeight(.bold)
+                        Text(courseName).font(.title).fontWeight(.bold)
                         HStack {
-                            Text("川菜 · 辣度适中").font(.caption)
+                            Text(courseTag).font(.caption)
                         }.padding(.leading, 4.0)
                         
                     }

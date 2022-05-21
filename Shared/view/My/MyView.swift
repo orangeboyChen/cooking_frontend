@@ -15,24 +15,27 @@ struct MyView: View {
                     Spacer().frame(height: UIApplication.shared.statusBarFrame.height)
                     HStack {
                         Button(action: {
+                            //todo:跳转到个人资料编辑
                             print("asd")
                         }){
                             Image("hongshaorou")
                                 .resizable()
                                 .clipShape(Circle())
                                 .frame(width: 50, height: 50)
-                            
+                            VStack(alignment: .leading) {
+                                Text("张三")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                                Text("贡献了0道菜")
+                                    .font(.system(size: 14.0))
+                                    .foregroundColor(.gray)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.systemGray2)
                         }
-                        VStack(alignment: .leading) {
-                            Text("张三")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                            Text("贡献了0道菜")
-                                .font(.system(size: 14.0))
-                                .foregroundColor(.gray)
-                        }
-                        
-                        Spacer()
+
                     }
                     .padding()
                     

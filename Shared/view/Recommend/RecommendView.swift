@@ -10,6 +10,9 @@ import SwiftUIX
 struct RecommendView: View {
     
     @State var keyword = ""
+    private let coursename=["拔丝土豆","菠菜炒鸡蛋","红烧肉","啤酒鸭"]
+    private let coursepic=["basitudou","bocaichaojidan","hongshaorou","pijiuya"]
+    private let coursetag=["鲁菜·甜度较重","浙菜·营养丰富","湘菜·十分美味","湘菜·鲜香微辣"]
     
     var body: some View {
         NavigationView {
@@ -35,8 +38,8 @@ struct RecommendView: View {
                             
                         }
                         VStack {
-                            ForEach (1..<7){ i in
-                                RecommendCourseCard()
+                            ForEach (1..<5){ i in
+                                RecommendCourseCard(courseName: coursename[i-1],courseTag:coursetag[i-1],pic: coursepic[i-1])
                                     .padding(.vertical, 4.0)
                                     
                                 
